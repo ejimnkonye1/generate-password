@@ -26,7 +26,7 @@ function Test() {
     setLoading(true);
     const types = passwordtype.join(',');
     try {
-      const response = await axios.get(`http://localhost:5000/password_length/${passwordlength}/${types}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/${passwordlength}/${types}`);
       setPassword(response.data.password);
       setPasswordLength(response.data.length);
       console.log(password);
